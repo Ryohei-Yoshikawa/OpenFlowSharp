@@ -1,1 +1,5 @@
 bin
+obj
+OpenFlowSharp$VS.csproj.user
+OpenFlowSharp$VS.pidb
+OpenFlowSharp.pidb

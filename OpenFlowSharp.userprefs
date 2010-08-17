@@ -3,9 +3,10 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sample/SampleViewController.xib.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OpenFlowSharp/OpenFlowView.cs" ctype="Workbench">
     <Files>
-      <File FileName="Sample/SampleViewController.xib.cs" Line="111" Column="24" />
+      <File FileName="Sample/SampleViewController.xib.cs" Line="92" Column="38" />
+      <File FileName="OpenFlowSharp/OpenFlowView.cs" Line="122" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,10 @@
           <Node name="MonoTouchLib" expanded="True">
             <Node name="References" expanded="True" />
           </Node>
-          <Node name="Sample" expanded="True" selected="True" />
+          <Node name="OpenFlowSharp" expanded="True">
+            <Node name="OpenFlowView.cs" selected="True" />
+          </Node>
+          <Node name="Sample" expanded="True" />
           <Node name="TestPickEvent" expanded="True">
             <Node name="source" expanded="True">
               <Node name="Tasks" expanded="True" />
