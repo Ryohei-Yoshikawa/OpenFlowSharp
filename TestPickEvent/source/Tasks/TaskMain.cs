@@ -12,6 +12,8 @@
 		{
 			_view = new OpenFlowSharp.OpenFlowView(AppDelegate.Instance.Window.Bounds, this);
 			LoadAllImages();
+			_view.ItemChanged += OnItemChanged;
+			_view.ItemPicked += OnItemPicked;
 
 			AppDelegate.Instance.Window.AddSubview(_view);
 			IsOpened = true;
@@ -20,6 +22,8 @@
 		public override void Close ()
 		{
 			IsClosed = true;
+			_view.ItemChanged -= OnItemChanged;
+			_view.ItemPicked -= OnItemPicked;
 			_view.RemoveFromSuperview();
 		}
 
@@ -37,7 +41,14 @@
 			_view.NumberOfImages = NumberOfImages;
 		}
 
-		private OpenFlowSharp.OpenFlowView _view;
+		private void OnItemChanged(OpenFlowSharp.OpenFlowView sender, int index)
+		{
+			System.Diagnostics.Debug.WriteLine("+ [TaskMain.OnItemChanged] Index:" + index);
+		}
+		private void OnItemPicked(OpenFlowSharp.OpenFlowView sender, int index)
+		{
+			System.Diagnostics.Debug.WriteLine("+ [TaskMain.OnItemPicked] Index:" + index);
+		}
 
 		#region IOpenFlowDataSource メンバ
 
@@ -57,6 +68,9 @@
 		}
 
 		#endregion
+
+		private OpenFlowSharp.OpenFlowView _view;
+
 	}
 }
 

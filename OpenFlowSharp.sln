@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFlowSharp", "OpenFlowSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{BBBC1BB1-9A6B-452F-9894-0D4FD75D7921}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPickEvent", "TestPickEvent\TestPickEvent.csproj", "{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouchLib", "..\..\Development\MonoTouchLib\MonoTouchLib\MonoTouchLib.csproj", "{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -13,6 +17,14 @@ Global
 		Release|iPhone = Release|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhone.Build.0 = Debug|iPhone
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhone.ActiveCfg = Release|iPhone
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhone.Build.0 = Release|iPhone
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhone.Build.0 = Debug|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -29,8 +41,16 @@ Global
 		{BBBC1BB1-9A6B-452F-9894-0D4FD75D7921}.Release|iPhone.Build.0 = Release|iPhone
 		{BBBC1BB1-9A6B-452F-9894-0D4FD75D7921}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{BBBC1BB1-9A6B-452F-9894-0D4FD75D7921}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhone.Build.0 = Release|iPhone
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Sample\Sample.csproj
+		StartupItem = TestPickEvent\TestPickEvent.csproj
 	EndGlobalSection
 EndGlobal

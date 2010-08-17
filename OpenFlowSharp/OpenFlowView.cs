@@ -1,4 +1,4 @@
-// Copyright (c) 2009 Alex Fajkowski, Apparent Logic LLC
+﻿// Copyright (c) 2009 Alex Fajkowski, Apparent Logic LLC
 // C# port Copyright (C) 2010 Miguel de Icaza.
 //
 // Permission is hereby granted, free of charge, to any person
@@ -44,7 +44,7 @@ namespace OpenFlowSharp
 		IOpenFlowDataSource dataSource;
 		UIImage defaultImage = new UIImage ();
 		UIScrollView scrollView;
-		ItemView selectedCoverView;
+		ItemView _selectedCoverView;
 		CATransform3D leftTransform, rightTransform;
 		
 		int lowerVisibleCover, upperVisibleCover, numberOfImages, beginningCover;
@@ -86,7 +86,7 @@ namespace OpenFlowSharp
 			set {
 				numberOfImages = value;
 				scrollView.ContentSize = new SizeF ((float)(value * coverSpacing + Bounds.Size.Width), Bounds.Size.Height);
-				if (selectedCoverView == null)
+				if (_selectedCoverView == null)
 					SetSelectedCover (0);
 				Layout ();
 			}
@@ -111,13 +111,13 @@ namespace OpenFlowSharp
 		
 		void Layout ()
 		{
-			if (selectedCoverView == null)
+			if (_selectedCoverView == null)
 				return;
 			
-			int lowerBound = Math.Max (-1, selectedCoverView.Number - kCoverBuffer);
-			int upperBound = Math.Min (NumberOfImages-1, selectedCoverView.Number + kCoverBuffer);
+			int lowerBound = Math.Max (-1, _selectedCoverView.Number - kCoverBuffer);
+			int upperBound = Math.Min (NumberOfImages-1, _selectedCoverView.Number + kCoverBuffer);
 			
-			LayoutCovers (selectedCoverView.Number, lowerBound, upperBound);
+			LayoutCovers (_selectedCoverView.Number, lowerBound, upperBound);
 			CenterOnSelectedCover (false);
 			
 		}
@@ -145,6 +145,15 @@ namespace OpenFlowSharp
 			
 			t.Start ();
 #endif
+		}
+
+		public override void MovedToWindow()
+		{
+			int selected = Selected;
+			if (0 <= selected)
+			{
+				CallChangedDelegate(selected);
+			}
 		}
 		
 		public override void AwakeFromNib ()
@@ -174,7 +183,7 @@ namespace OpenFlowSharp
 			
 			// Initialize the visible and selected cover range.
 			lowerVisibleCover = upperVisibleCover = -1;
-			selectedCoverView = null;
+			_selectedCoverView = null;
 			
 			// Set up transforms
 			UpdateTransforms ();
@@ -303,12 +312,12 @@ namespace OpenFlowSharp
 
 		public void SetSelectedCover (int newSelectedCover)
 		{
-			if (selectedCoverView != null && (newSelectedCover == selectedCoverView.Number))
+			if (_selectedCoverView != null && (newSelectedCover == _selectedCoverView.Number))
 			    return;
 			    
 			int newLowerBound = Math.Max (0, newSelectedCover - kCoverBuffer);
 			int newUpperBound = Math.Min (numberOfImages - 1, newSelectedCover + kCoverBuffer);
-			if (selectedCoverView == null){
+			if (_selectedCoverView == null){
 				// Allocate and display covers from newLower to newUYpper bounds.
 				for (int i = newLowerBound; i <= newUpperBound; i++){
 					var cover = CoverForIndex (i);
@@ -320,7 +329,7 @@ namespace OpenFlowSharp
 				
 				lowerVisibleCover = newLowerBound;
 				upperVisibleCover = newUpperBound;
-				selectedCoverView = onscreenCovers [newSelectedCover];
+				_selectedCoverView = onscreenCovers [newSelectedCover];
 				return;
 			}
 			
@@ -345,10 +354,10 @@ namespace OpenFlowSharp
 				}
 				lowerVisibleCover = newLowerBound;
 				upperVisibleCover = newUpperBound;
-				selectedCoverView = onscreenCovers [newSelectedCover];
+				_selectedCoverView = onscreenCovers [newSelectedCover];
 				LayoutCovers (newSelectedCover, newLowerBound, newUpperBound);
 				return;
-			} else if (newSelectedCover > selectedCoverView.Number){
+			} else if (newSelectedCover > _selectedCoverView.Number){
 				for (int i = lowerVisibleCover; i < newLowerBound; i++){
 					var cover = onscreenCovers [i];
 					if (upperVisibleCover < newUpperBound){
@@ -407,26 +416,26 @@ namespace OpenFlowSharp
 				lowerVisibleCover = newLowerBound;
 			}
 				
-			if (selectedCoverView.Number > newSelectedCover)
-				LayoutCovers (newSelectedCover, newSelectedCover, selectedCoverView.Number);
-			else if (newSelectedCover > selectedCoverView.Number)
-				LayoutCovers (newSelectedCover, selectedCoverView.Number, newSelectedCover);
+			if (_selectedCoverView.Number > newSelectedCover)
+				LayoutCovers (newSelectedCover, newSelectedCover, _selectedCoverView.Number);
+			else if (newSelectedCover > _selectedCoverView.Number)
+				LayoutCovers (newSelectedCover, _selectedCoverView.Number, newSelectedCover);
 			
-			selectedCoverView = onscreenCovers [newSelectedCover];
+			_selectedCoverView = onscreenCovers [newSelectedCover];
 		}
 		
 		public void CenterOnSelectedCover (bool animated)
 		{
-			var selectedOffset = new PointF ((float) coverSpacing * selectedCoverView.Number, 0);
+			var selectedOffset = new PointF ((float) coverSpacing * _selectedCoverView.Number, 0);
 			scrollView.SetContentOffset (selectedOffset, animated);
 		}
 		
 		public int Selected { 
 			get {
-				if (selectedCoverView == null)
+				if (_selectedCoverView == null)
 					return -1;
 				
-				return selectedCoverView.Number;
+				return _selectedCoverView.Number;
 			}
 		}
 		
@@ -444,14 +453,14 @@ namespace OpenFlowSharp
 				
 				if (onscreenCovers.TryGetValue (idx, out aCover)){
 					aCover.SetImage (imageWithReflection, value.Size.Height, kReflectionFraction);
-					LayoutCover (aCover, selectedCoverView.Number, false);
+					LayoutCover (aCover, _selectedCoverView.Number, false);
 				}
 			}
 		}
 			
 		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
  	 	{
-			if (selectedCoverView == null)
+			if (_selectedCoverView == null)
 				return;
 			
 			var startPoint = ((UITouch) touches.AnyObject).LocationInView (this);
@@ -462,7 +471,7 @@ namespace OpenFlowSharp
 			var targetCover = FindCoversOnScreen (targetLayer);
 			isDraggingACover = targetCover != null;
 			
-			beginningCover = selectedCoverView.Number;
+			beginningCover = _selectedCoverView.Number;
 			// Make sure the user is tapping on a cover.
 			startPosition = (float)((startPoint.X / 1.5) + scrollView.ContentOffset.X);
 			
@@ -474,7 +483,7 @@ namespace OpenFlowSharp
 
 		public override void TouchesMoved (MonoTouch.Foundation.NSSet touches, UIEvent evt)
 		{
-			if (selectedCoverView == null)
+			if (_selectedCoverView == null)
 				return;
 			
 			isSingleTap = false;
@@ -489,21 +498,88 @@ namespace OpenFlowSharp
 			var newPoint = new PointF ((float) offset, 0);
 			scrollView.ContentOffset = newPoint;
 			int newCover = (int)(offset / coverSpacing);
-			if (newCover != selectedCoverView.Number){
+			if (newCover != _selectedCoverView.Number){
 				if (newCover < 0)
 					SetSelectedCover (0);
 				else if (newCover >= numberOfImages)
 					SetSelectedCover (numberOfImages-1);
 				else
 					SetSelectedCover (newCover);
+
+				if (0 <= newCover)
+				{
+					CallChangedDelegate(newCover);
+				}
 			}
 		}
 		
 		public event EventHandler Changed;
+
+		/// <summary>
+		/// アイテム変更デリゲート型。
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="index"></param>
+		public delegate void ItemChangedDelegate(OpenFlowView sender, int index);
+
+		/// <summary>
+		/// アイテム変更デリゲート
+		/// </summary>
+		public event ItemChangedDelegate ItemChanged
+		{
+			add
+			{
+				_changedDelegate += value;
+			}
+			remove
+			{
+				_changedDelegate -= value;
+			}
+		}
+		private ItemChangedDelegate _changedDelegate;
+
+		private void CallChangedDelegate(int index)
+		{
+			if (null != _changedDelegate)
+			{
+				_changedDelegate(this, index);
+			}
+		}
+
+		/// <summary>
+		/// アイテム選択デリゲート型。
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="index"></param>
+		public delegate void ItemPickedDelegate(OpenFlowView sender, int index);
+
+		/// <summary>
+		/// アイテム選択デリゲート。
+		/// </summary>
+		public event ItemPickedDelegate ItemPicked
+		{
+			add
+			{
+				_pickedDelegate += value;
+			}
+			remove
+			{
+				_pickedDelegate -= value;
+			}
+		}
+		private ItemPickedDelegate _pickedDelegate;
+
+		private void CallPickedDelegate(int index)
+		{
+			if (null != _pickedDelegate)
+			{
+				_pickedDelegate(this, index);
+			}
+		}
 		
 		public override void TouchesEnded (MonoTouch.Foundation.NSSet touches, UIEvent evt)
 		{
-			if (selectedCoverView == null)
+			if (_selectedCoverView == null)
 				return;
 			
 			if (isSingleTap){
@@ -511,19 +587,26 @@ namespace OpenFlowSharp
 				var targetLayer = scrollView.Layer.HitTest (targetPoint);
 				var targetCover = FindCoversOnScreen (targetLayer);
 				
-				if (targetCover != null && (targetCover.Number != selectedCoverView.Number))
+				if (targetCover != null && (targetCover.Number != _selectedCoverView.Number))
 					SetSelectedCover (targetCover.Number);
 			}
 			CenterOnSelectedCover (true);
 			
 			// Raise the event
-			if (beginningCover != selectedCoverView.Number){
+			if (beginningCover != _selectedCoverView.Number)
+			{
 				EventHandler h = Changed;
 				if (h != null)
-					h (this, EventArgs.Empty);
+					h(this, EventArgs.Empty);
+			}
+			else
+			{
+				// アイテム選択
+				if (null != _pickedDelegate)
+				{
+					_pickedDelegate(this, _selectedCoverView.Number);
+				}
 			}
 		}
-	
-
 	}
 }
