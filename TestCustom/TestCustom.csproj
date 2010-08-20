@@ -74,9 +74,17 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="source\Tasks\TaskMain.cs" />
+    <Compile Include="source\Tasks\TaskXibTest.cs" />
+    <Compile Include="source\Views\ViewCoverFlow.xib.cs">
+      <DependentUpon>ViewCoverFlow.xib</DependentUpon>
+    </Compile>
+    <Compile Include="source\Views\ViewCoverFlow.xib.designer.cs">
+      <DependentUpon>ViewCoverFlow.xib</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
+    <Page Include="source\Views\ViewCoverFlow.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -97,6 +105,7 @@
   <ItemGroup>
     <Folder Include="source\" />
     <Folder Include="source\Tasks\" />
+    <Folder Include="source\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.png" />

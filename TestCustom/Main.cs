@@ -27,7 +27,8 @@ namespace TestCustom
 			FramePerSeconds = 30;
 			StartMainLoop();
 
-			MonoLib.Core.TaskManager.Instance.InitTask(new TaskMain());
+			//MonoLib.Core.TaskManager.Instance.InitTask(new TaskMain());
+			MonoLib.Core.TaskManager.Instance.InitTask(new TaskXibTest());
 			
 			window.MakeKeyAndVisible ();
 			

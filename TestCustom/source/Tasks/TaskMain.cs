@@ -15,6 +15,8 @@
 			};
 			_view.ItemChanged += OnItemChanged;
 			_view.ItemPicked += OnItemPicked;
+			//_view.Initialize();
+			//_view.NumberOfImages = NumberOfImages(_view);
 			AppDelegate.Instance.Window.AddSubview(_view);
 			IsOpened = true;
 		}

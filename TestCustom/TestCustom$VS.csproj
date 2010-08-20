@@ -60,6 +60,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch">
@@ -75,9 +76,15 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="source\Tasks\TaskMain.cs" />
+    <Compile Include="source\Tasks\TaskXibTest.cs" />
+    <Compile Include="source\Views\ViewCoverFlow.xib.cs" />
+    <Compile Include="source\Views\ViewCoverFlow.xib.designer.cs">
+      <DependentUpon>ViewCoverFlow.xib.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="MainWindow.xib" />
+    <None Include="source\Views\ViewCoverFlow.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
