@@ -3,69 +3,47 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFlowSharp$VS", "OpenFlowSharp\OpenFlowSharp$VS.csproj", "{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouchLib$VS", "D:\iphone_proj\MonoTouchLib\MonoTouchLib\MonoTouchLib$VS.csproj", "{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCustom$VS", "TestCustom\TestCustom$VS.csproj", "{18092D41-4A1E-41DD-83DC-B3B8E719D343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPickEvent$VS", "TestPickEvent\TestPickEvent$VS.csproj", "{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTouchLib$VS", "D:\iphone_proj\MonoTouchLib\MonoTouchLib\MonoTouchLib$VS.csproj", "{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|iPhone = Debug|iPhone
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
-		Debug|Mixed Platforms = Debug|Mixed Platforms
-		Release|Any CPU = Release|Any CPU
 		Release|iPhone = Release|iPhone
 		Release|iPhoneSimulator = Release|iPhoneSimulator
-		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhone.Build.0 = Debug|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhone
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Debug|Mixed Platforms.Build.0 = Debug|iPhone
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|iPhone.ActiveCfg = Release|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|iPhone.Build.0 = Release|iPhone
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|Mixed Platforms.ActiveCfg = Release|iPhone
-		{A8CE55FC-1D12-4DB5-A5F8-836928F7BCD9}.Release|Mixed Platforms.Build.0 = Release|iPhone
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Debug|iPhone.Build.0 = Debug|iPhone
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Release|iPhone.ActiveCfg = Release|iPhone
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Release|iPhone.Build.0 = Release|iPhone
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{18092D41-4A1E-41DD-83DC-B3B8E719D343}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhone.Build.0 = Debug|iPhone
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhone
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Debug|Mixed Platforms.Build.0 = Debug|iPhone
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhone.ActiveCfg = Release|iPhone
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhone.Build.0 = Release|iPhone
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|Mixed Platforms.ActiveCfg = Release|iPhone
-		{A1E5F4D4-DEF0-4D99-B6F8-D9600228C278}.Release|Mixed Platforms.Build.0 = Release|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhone.Build.0 = Debug|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|Mixed Platforms.ActiveCfg = Debug|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Debug|Mixed Platforms.Build.0 = Debug|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhone.ActiveCfg = Release|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhone.Build.0 = Release|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|Mixed Platforms.ActiveCfg = Release|iPhone
-		{F1038CF7-F987-457F-A5E5-C1FC5A0B290F}.Release|Mixed Platforms.Build.0 = Release|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TestPickEvent\TestPickEvent$VS.csproj
+		StartupItem = TestCustom\TestCustom$VS.csproj
 	EndGlobalSection
 EndGlobal

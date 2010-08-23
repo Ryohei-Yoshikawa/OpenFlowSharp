@@ -1,26 +1,30 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" ctype="Workspace" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" ctype="Workspace" />
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="OpenFlowSharp/OpenFlowView.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestCustom/source/Tasks/TaskXibTest.cs" ctype="Workbench">
     <Files>
-      <File FileName="Sample/SampleViewController.xib.cs" Line="92" Column="38" />
-      <File FileName="OpenFlowSharp/OpenFlowView.cs" Line="122" Column="2" />
+      <File FileName="TestCustom/source/Views/ViewCoverFlow.xib.cs" Line="11" Column="18" />
+      <File FileName="TestCustom/source/Views/ViewCoverFlow.xib.designer.cs" Line="39" Column="1" />
+      <File FileName="TestCustom/source/Tasks/TaskXibTest.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="MonoTouchLib" expanded="True">
             <Node name="References" expanded="True" />
+            <Node name="source" expanded="True">
+              <Node name="UI" expanded="True" />
+            </Node>
           </Node>
-          <Node name="OpenFlowSharp" expanded="True">
-            <Node name="OpenFlowView.cs" selected="True" />
-          </Node>
-          <Node name="Sample" expanded="True" />
-          <Node name="TestPickEvent" expanded="True">
+          <Node name="OpenFlowSharp" expanded="True" />
+          <Node name="TestCustom" expanded="True">
             <Node name="source" expanded="True">
               <Node name="Tasks" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="ViewCoverFlow.xib" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
